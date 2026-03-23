@@ -1,0 +1,151 @@
+
+const kapakPhoto = "[BASE64_IMAGE]";
+
+const contributors = [
+  { name: "Aleyk Esquerdo", text: "Sevgili Hasan Cahit, Yaşadığımız yılları birlikte geçirmek bize ne büyük şanstır! Hayatındaki doğru kişilerin yanında olmayı istiyorum, çünkü senin gibi bir arkadaşı olmak, hayatımı daha anlamlı kılıyor. İyi ki doğdun, iyi ki varsın!", date: "" },
+  { name: "Alp Yılmaz", text: "Hasan, dostluğumuzun her daim baki olmasını diliyorum. Yıllarca birlikte geçirdiğimiz anılar benim için çok değerli. Yeni yaşında başarılar ve mutluluk dilerim.", date: "" },
+  { name: "Anıl Özer", text: "Sevgili Hasan Cahit kardeşim, Seni doğduğun günden beri tanıdığım için çok şanslıyım. Sakinliğin ve saygılı tavırlarınla hep örnek olan birisin. Aynı zamanda o neşen ve güleryüzünle her ortamı aydınlatıyorsun. Umarım bu yeni yaşında hayallerine bir adım daha yaklaşır, mutlu ve başarılı yıllar geçirirsin. Doğum günün kutlu olsun...", date: "" },
+  { name: "Asya Gül", text: "Hasan, TAC sayesinde hayatıma giren ve gerçekten \\\"iyi ki\\\" dediğim sayılı insanlardan birisin. Kolay kolay görüşemesek de, zor bir anda yazsam orada olacağını bilmek bana hep iyi geliyor. Bu arkadaşlık benim için çok değerli. Nice yaşlara, nice anılara. İyi ki varsın", date: "" },
+  { name: "Ata Yağız", text: "Yaşadığımız dönemlerde beraberlik, hep aynı yolda yürümek, tüm güzel ve zor anları birlikte geçirmek çok anlamlı. Umarım yeni yaşında seninle daha nice güzel anılar biriktirebilirim.", date: "" },
+  { name: "Atabey Yiğit", text: "Hasan kardeşim, seni tanımaktan ve arkadaş olmaktan çok onur duyuyorum. Başarılı ve mutlu bir yaş dilerim.", date: "" },
+  { name: "Atakan Akar", text: "İyi ki doğdun, iyi ki arkadaşsın. Nice güzel yaşlara, sağlık ve mutluluk dilerim.", date: "" },
+  { name: "Atilla Konuk", text: "Oğlum, görkemli yarınlar seni bekliyor. Tüm engelleri aşıp başarılar elde etmeni diliyorum. Seni çok seviyorum.", date: "" },
+  { name: "Aynur Akıncı", text: "Sevgili Hasan Cahit, doğum günün kutlu olsun. Seni çok seviyorum, nice mutlu yıllar.", date: "" },
+  { name: "Bahar Navda", text: "Hasan, dostluğumuz her daim devam etsin. Yeni yaşında başarılı ve mutlu ol.", date: "" },
+  { name: "Baran Germen", text: "Kardeşim, iyi ki varsın, iyi ki doğdun. Nice güzel anılara birlikte.", date: "" },
+  { name: "Batu Yardımcı", text: "Yeni yaşın kutlu olsun. Başarılar diliyorum.", date: "" },
+  { name: "Berat Güdül", text: "Hasan, arkadaşlığımız sonsuza kadar. Mutlu yıllar dilerim.", date: "" },
+  { name: "Berk Akar", text: "Doğum günün kutlu olsun, arkadaşım. İyi ki varsın.", date: "" },
+  { name: "Berrin Özer", text: "Çok güzel bir kalbin var, hayat karşına hep senin gibi iyi niyetli insanlar çıkarsın. Yoluna çıkan hiçbir engel seni yıldıramaz bence çünkü çok doğal bir neşen var. Yeni yaşında her günün bir öncekinden daha iyi geçsin. Hep mutlu olduğun, enerjinin hiç bitmediği bir yaş dilerim. İYİ Kİ DOĞDUNNN!!!", date: "" },
+  { name: "Betül Türksoyoğlu", text: "Doğum günün kutlu olsun Hasan Cahit iyi ki doğmuşsun ve arkadaşımız olmuşsun. Nice mutlu, sağlıklı, sevdiklerinle yılların olsun. Güzel arkadaşlığımızın sürekli olmasını çok isterim. Nice birlikte yıllara. Seni çok seviyoruzz🤍🤍🤍", date: "" },
+  { name: "Bilen Akıncı", text: "Karakterin ve hayata karşı duruşunla her zaman takdir edilecek bir delikanlı oldun. Başarın daim, yolun açık olsun. Nice güzel yaşlara.", date: "" },
+  { name: "Boran Erdoğan", text: "Antalyanın gülü doğum günün kutlu olsun, nice mutlu ve sağlıklı senelerine. İyi ki doğmuşsun. Güler yüzlülüğünü kaybetme güzel insan, her zaman mutlu olmanı diliyorum.💫", date: "" },
+  { name: "Bülent Baykal ve Oya Baykal", text: "Sevgili Hasan Cahit, Antalya, Tarsus ve Londra gibi önemli şehirlerin okullarında aldığın eğitim yolculuğunu, inşallah üniversite finaliyle ilkbaharda tamamlayıp nice yeni baharlara yelken açacaksın. Yeni yaşının sana ve ailene sağlık, mutluluk ve başarı getirmesini; ömrünün tıpkı ilkbahar gibi şen, Fenerbahçe galibiyetleri kadar keyifli geçmesini diliyoruz. Gözlerinden öperiz. Sevgiler, selamlar,", date: "" },
+  { name: "Canan Akıncı Germen", text: "Hasan Cahit doğduğun gün dün gibi aklımda, senin gülünce gözlerinin içinin gülmesini, başarılarını, saygılı ve sevgi dolu bir birey olarak yetişmeni izlemek çok büyük mutluluk benim için. Dilerim ömür boyu iyi insanlarla karşılaş sağlıklı huzurlu bir hayat sür. Seni seviyorum.", date: "" },
+  { name: "Damla Aydınoğlu", text: "Hasan iyi ki varsın yeni yaşında her şey gönlünce olsun nice mutlu yaşlara kanka🥳🎂✨", date: "" },
+  { name: "Deniz Güzelçay", text: "Sevgili dostum Hasan Cahit, Yıllar geçse de dostluğumuzun hiç değişmeyeceğini bilmek bana güç veriyor. Bu yeni yaşında yüzünden gülümseme hiç eksik olmasın. Nice mutlu senelere.", date: "" },
+  { name: "Dilber Tuna", text: "Sevgili Hasan Cahit, Doğum Günün Kutlu Olsun. Hayat yolculuğunda önce kendine sonra ailene ve sevdiklerine yakışır bir çizgide, ailene milletimize devletimize faydalı bir birey olarak sürdürmeni, şansının, bahtının, yolunun açık olmasını, canı gönülden diliyorum.", date: "" },
+  { name: "Dr. Burhanettin Çalım", text: "Sevgili HasanCahit, Yeni yaşında Üniversite hayatını tamamlamış, İş Dünyasına adımını atmış, Modern Türkiyenin gelişimi için çalışmalara başlamış, Bir gün başkanlığını yapacağına inandığım Antalyaspor umuzun Süperlig de devam ettiği, Büyüklüğünü Şampiyonlukla taçlandırmış bir Fenerbahçenin olduğu bir yıl yaşamanı gönülden istiyorum Sana Ailen ve sevdiklerinle beraber her şeyin gönlünce olacağı sağlık ve sevgi dolu yıllar diliyorum. İyiki doğdun hayatımıza girdin Doğum Günün kutlu olsun Evlat.", date: "" },
+  { name: "Efe Tuncer", text: "İyi ki doğdun Hasan Cahit'cim. Yeni yaşın sana sağlık, başarı ve huzur getirsin. Her şeyin gönlünce olduğu, yüzünün hep güldüğü güzel bir yıl olsun.", date: "" },
+  { name: "Ege Sağlam", text: "Hasan'a şöyle bir mesaj bırakıyorum \\\"Hasan Cahit'le arkadaş olmak ayrıcalık gibi bir şey. Her ortamda uyum sağlayan, muhabbeti güzelleştiren, insanın yanında kendisi olabildiği biri. İyi ki doğdun kardeşim, daha nice anıya birlikte\\\"", date: "" },
+  { name: "Emre Akyar", text: "Yeni yaşın kutlu olsun Hasan kardeşim. Yurtdışında atıldığım bu üniversite yolculuğunda senin gibi değerli bir arkadaş edindiğim için çok mutluyum. Sayende Londrada çok eğlenceli anlar yaşadık, zor günlerde de (GS Şampiyonlukları ;) ) birbirimiziniz yanında olduk. Üniversitede hem sosyal hem de akademik olarak çok başarılı olan ve hep bana örnek olan biri olarak, iş hayatında da fazlasıyla başarı elde edeceğine eminim.", date: "" },
+  { name: "Emir Caniberk", text: "Az adam var, sende onlardansın. İyi ki doğdun , nice beraber yaşlara", date: "" },
+  { name: "Engin Şener", text: "Sevgili Hasan Cahit, Doğum gününü kutlar, ailen ve sevdiklerinle birlikte bir ömür boyu sağlıklı ve mutlu yaşlar dilerim.🎂🎂🎂 Engin abin.", date: "" },
+  { name: "Feral Türel", text: "Canım Hasan Cahidim daha bize dün gibi geliyor büyüdün Unuversiteli oldun bitiriyorsun ne mutlu bize. Çocukluğumdan beri hep saygılı sevecen mutlu bir çocuk oldun inşallah bütün ömrün boyunca mutlu olursun. Doğum günün kutlu olsun Nice mutlu yıllar seninle olsun. Seni çok seven Feral teyzen.", date: "" },
+  { name: "Gözde Akıncı", text: "Her zaman saygılı duruşun, gülen gözlerin ve çalışkanlığınla kalbimde ayrı bir yerin var. Seni böyle güzel bir delikanlı olarak görmek beni çok mutlu ediyor. Her zaman gül ve hep mutlu, başarılı ol; biz de bu hayat yolculuğuna şahit olalım. Nice güzel yaşlara 💙", date: "" },
+  { name: "Gülfidan Sivrikaya", text: "Sevgili Hasancahit, çocuklarımız hayatın bize verdiği en güzel hediye! Senin de doğduğundan beri nasıl güzel ve mutlu büyüdüğünü görmek, zamanın nasıl hızlı ama bir o kadar da mucizevi geçtiğini hatırlatıyor. Şimdi artık büyüdün, başarılı bir gençsin, son görüştüğümüzde gülen gözlerinin içinde gördüğüm ışık, senin önündeki tüm engelleri aşacak güçte olduğunu gösteriyor. Zaten eğitim hayatındaki başarında gelecekte neler başarabileceğinin en güzel kanıtı! Geleceğe dair umudun hiç bitmesin, yeni yaşın sana hayallerindeki dünyayı getirsin, herşey gönlünce olsun!🍀💙", date: "" },
+  { name: "Hakan Mutlutürk", text: "Hasan Cahit dostlarımın oğlu sonra okul kardeşim ve mezun olduktan sonra, genç yaşında gösterdiği olgunluk...sorumluluk ve ince espri zekası ile tereddütsüz arkadaşım oldu..Bugünlerde de bütün bu niteliklerinin bilincinde olan ve bunları geliştirmeye odaklanmış Hasan Cahit i gözlemliyorum..Kardeş.. Nice sağlıklı ..başarılar ile dolu seneler diliyorum sana. Gelince ara ve kaldığımız yerden devam edelim..😀", date: "" },
+  { name: "Hakan Sönmez", text: "Sevgili Hasan Cahitcigim, Yetişkinlik dünyasına adım atmaya az bir süre kala, içinde bulunduğun enerji ve heyecanı, şartlar ne olursa olsun, hep koru. Seni, Sevgi ve umut içinde hayata hazırlayan, başta Annen ve Baban olmak üzere, ailene olan bağlılığına, daima sıkı sıkıya sarıl. Yolun açık, şansın bol olsun. Sevgi ve huzur içinde yaş ve yaşlar diliyorum.", date: "" },
+  { name: "Hale Kapsal", text: "Kardeş gibi sevilen yalnızken koşup yanına gelecek, manevi en büyük destekçi, iyi kalbe, sevgi ve saygı bağına sahip olan kişi denilince işte Hasan Cahit.", date: "" },
+  { name: "Holly", text: "Wishing all the best for Hasan, fellow lover of kuru fasülye", date: "" },
+  { name: "İdil Şekerci", text: "Doğum günün kutlu olsun Hasan Cahit iyi ki doğmuşsun ve arkadaşımız olmuşsun. Nice mutlu, sağlıklı, sevdiklerinle yılların olsun. Güzel arkadaşlığımızın sürekli olmasını çok isterim. Nice birlikte yıllara. Seni çok seviyoruzz🤍🤍🤍", date: "" },
+  { name: "İpek Yeğin", text: "Canım arkadaşım doğum günün kutlu olsun. İyi ki beraber büyümüşüz, sitede koşturmuşuz, tenis öğrenmeye çalışmışız (ben daha çok topları inşaata kaçırmış olsam da sen devam). İyi ki arkadaş olmuşuz da birbirimizin hayatına girmişiz. Umarım karşına hep senin kadar temiz kalpli insanlar çıkar. Hep çokk mutlu ol. Nice beraber senelere!!!", date: "" },
+  { name: "Kaan Cengiz", text: "İyi ki doğdun Hasan Cahit. Neredeyse doğduğumdan beri hayatıma ortaksın; çocukluktan bugüne yan yana büyürken bir sürü şey değişti, ama seninle kurduğumuz arkadaşlık, hatta kardeşlik, hiç eksilmedi. Aynı şeylere güldük, hala Beyaz Futbol ve Gibi sahneleri aklımızın bir köşesinde. Bazen uzun süre görüşemedik ama yine de kopmadık; iyi günlerde de zor günlerde de birbirimize yaslanmayı bildik. Şimdi Londra'da olsan da, aramızdaki mesafe bana hep geçici geliyor.", date: "" },
+  { name: "Kaan Olcay", text: "Hasan Cahit, doğum günün kutlu olsun. İyi ki seni tanımışım, iyi ki dostumsun. Temiz kalbin ve güzel enerjinle hep yanımızda olmanı diliyorum. Hayat sana sağlık, mutluluk ve bolca güzel an getirsin. Seni çok seviyoruz.", date: "" },
+  { name: "Kerim Can Ozan", text: "Kardeşim 6 seneye yakindir samimi arkadasiz. Pek çok unutulmayacak güzel anılar biriktirdik. İyi ki varsin, seviliyorsun. Nice mutlu yaşların olsun, iyi ki tanismisiz.", date: "" },
+  { name: "Mert Efe Yılmaz", text: "Yeni yaşın kutlu olsun Hasan kardeşim. Yurtdışında atıldığım bu üniversite yolculuğunda senin gibi değerli bir arkadaş edindiğim için çok mutluyum. Sayende Londrada çok eğlenceli anlar yaşadık, zor günlerde de (GS Şampiyonlukları ;) ) birbirimiziniz yanında olduk. Bol Fenerbahçe galibiyeti kutlayacağımız bir yaş olsun. En yakın zamanda Londra'da görüşmek üzere, seviliyorsun💙💛", date: "" },
+  { name: "Mert Işık", text: "Hasanım, başkanım, kardeşim bir yaşın daha sonuna geldik demek ki. Ne kadar yıllar geçse de mekanlar değişsede dostluğumuzun her daim baki olucağını bilmeni isterim can dostum. Daha dün gibi hatırlarım ilk tanıştığımız günü dile kolay 8 yıl olmuş Hasanım acısıyla tatlısıyla sayısızca anımız oldu birlikte. Dilerim ki arkadaşlığımız hiç bozulmasın birbirimizi kaybetmeyelim hep böyle devam etsin yıllarca aramızdaki bağ.", date: "" },
+  { name: "Murat Duymuş", text: "Sevgili Hasan Cahit, Sen bize Antalyaspor'un kurucu başkanı Atilla Konuk başkanımızın mirasısın. Küçüklüğünden bugüne kadar seni tanıdım gördüm. Efendi, saygılı, neşeli bir birey olarak hayatımıza renk katıyorsun. Sana naçizane önerim, Ne Antalyaspor'a başkan ol ne de Fenerbahçe'ye yönetici. Burhanettin abiye uyma :) En iyisi tribünde taraftar olmak FORZA CHELSEA …", date: "" },
+  { name: "Mustafa Kalın", text: "Bir dönem aynı evi, aynı dertleri paylaştık. Şimdi yollar ayrı ama anılar yerli yerinde. Yeni yaşın sana huzur, sağlık ve yüzünü güldüren insanlar getirsin. Doğum günün kutlu olsun.", date: "" },
+  { name: "Nadir Tuna", text: "Sevgili Hasan Cahit, Doğum Günün Kutlu Olsun. Hayat yolculuğunda önce kendine sonra ailene ve sevdiklerine yakışır bir çizgide, ailene milletimize devletimize faydalı bir birey olarak sürdürmeni, şansının, bahtının, yolunun açık olmasını, canı gönülden diliyorum.", date: "" },
+  { name: "Necati Güler", text: "Sevgili Hasan Cahit'ciğim, Seni ilk tanıdığımda, çok sevdiğim bir arkadaşımın oğluydun… Sonra, büyüdün; teker, teker okulları bitirmeye başladın… Bir gün, Tarsus'u kazandığını öğrendiğimde, ne kadar mutlu olduğumu anlatamam… Bir gün Tarsus'tan da mezun oldun; hatta, şimdi Londra'daki King's College'dan da mezun olmaya geldi sıra… TAC'den mezuniyet gününde, yanıma gelip, fotoğraf çektirmemiz, o günün en güzel anılarıydı…", date: "" },
+  { name: "Sema Çalım", text: "Hasan Cahit güzel kardeşim,😊 Seni görünce önce içindeki güzelliği, mutevaziligi ve gücü görüyorum. Sonra hepsi beraber kocaman heybetli yakışıklı bir Hasan Cahit görüyorum. İyiki varsın iyiki dogdun. Seni çok seviyoruz. Mutlu yıllar", date: "" },
+  { name: "Sedat Karabük", text: "Hasan Cahit'in doğum gününü tebrik eder, sağlıklı ve başarılı nice yaşlar dilerim. Kendisinin geleceğin Antalyaspor Başkanı olacağını ve Babası gibi de başarılı katkılar sağlayacağı inancımı da belirtmek isterim. Tüm aileye de selamlarımı iletiyorum.", date: "" },
+  { name: "Seyfi Özdokuyucu", text: "Tac'nin bana kattığı kardeş. Hayatıma girdiğin günden beri nezaketinle, iyi kalbinle ve yardımseverliğinle hep iz bıraktın. Yanında insan kendini güvende ve değerli hissediyor. Böyle bir insanı tanımak benim için gerçekten çok kıymetli. İyi ki varsın, Doğum günün kutlu olsun kardeşim.", date: "" },
+  { name: "Şahide Birgül Akıncıoğlu", text: "Hasan Cahit Akıncıoğlu Dedemin Babamın ve Kardeşimin adlarını geleceğe taşıyan kıymetli temel taşısın Sevgili oğlum varlığınla asaletinle aldığın iyi eğitiminle her daim onurumuz gururumuzsun doğum gününü kutluyorum seni çok seviyor ve kocaman öpüyorum hayatında her konuda başarılar diliyorum", date: "" },
+  { name: "Uğur Okyay", text: "Efendi, saygılı, dürüst, terbiyeli ve ahlaklı kişiliğinle seni hep takdir etmişimdir. Şansın, bahtın, yolun hep açık olsun. Daha nice yaşlara, sağlıkla, huzurla, mutlulukla, sevenlerinle, sevdiklerinle. Doğum günün kutlu olsun Hasan Cahit'im, seni çoook seviyorum. ❤❤🥰🥰", date: "" },
+  { name: "Utku Kaplan", text: "Business yoldaşım Hasan, seninle yıllardır aynı koridorlardan geçtik, aynı sınıflarda okuduk beraber bu yollardan geçtik. Her zaman bana ve arkadaşlarımıza destek olup bizimle beraber yürdüğün bu yolu unutmayacağımızı bilmeni isterim. Yarın öbürgün herkes kendi yoluna gidicek belki ama bu anılar her zaman kalıcı ve aklımızda. Doğum gününü kutlarım dostum, iyi ki doğmuşsun da yanımıza gelmişsin.", date: "" },
+  { name: "Yiğit Kuru", text: "Hasan'ım merhaba, umarım iyisin iyisindir. Uzun süredir görüşemesek de hala bağımız kopmadı, arkadaşlığımız ilk günkü gibi devam ediyor. Beraber Tarsus'tan İstanbul'a maça gittiğimiz günler, Kadıköy'de dolaşmalarımız hala aklımın bir yerinde. İyi ki doğdun iyi ki varsın iyi ki benim arkadaşımsın, umarım çok mutlu olduğun bir yaşın olur.", date: "" },
+  { name: "Yılmaz Vural", text: "Sevgili Hasan Cahit Öncelikle Doğum Günün kutlu ve her şey gönlünce olsun. Dilemek çok güzel, dileklerinin gerçekleştiğini görmek en güzelidir. Buda sana bağlıdır. Bu güne kadar yaptığın gibi ÇALIŞMAK, ÇALIŞMAK ve ÇOK ÇALIŞMAK. Akıncıoğlu Ailesinin yüz akı olmaya devam etmek. Seni çok seviyorum. Bu ara önce tabiiki Antalyaspor. Sonrada Fenerbahçenin Şampiyonluğunu görmen sana nasip olur inşallah. Sevgiyle yanaklarından öpüyorum", date: "" },
+  { name: "Ziya Baykal", text: "Sevgili Hasan Cahit, Gençliğinin enerjisi, kalbinin temizliği ve hayata dair umutların yolunu hep aydınlatsın. Attığın her adımda başarı, karşılaştığın her zorlukta güç seninle olsun. Hayallerinden vazgeçme, kendin olmaktan ise hiç ödün verme. \\\"İnsan, hayal edebildiği sürece yolunu kaybetmez.\\\" — Goethe Gönlünden geçen her güzel hayalin, zamanı geldiğinde gerçeğe dönüşmesini dilerim. Nice sağlıklı, mutlu ve yüzünün hep güldüğü yıllara…yeni yaşın kutlu olsun.", date: "" }
+];
+
+let pages = [];
+let total = 0;
+let cur = 0;
+
+function generatePages() {
+  const bookWrap = document.getElementById('bookWrap');
+  
+  // İçindekiler sayfasını oluştur
+  const indexContent = document.getElementById('indexContent');
+  indexContent.innerHTML = '';
+  
+  // Alfabetik sıraya göre
+  const sortedContribs = [...contributors].sort((a, b) => a.name.localeCompare(b.name));
+  
+  sortedContribs.forEach((contrib, idx) => {
+    const pageNum = 3 + idx; // Sayfa 3'ten başla (0=kapak, 1=önsöz, 2=içindekiler)
+    const firstLetter = contrib.name[0].toUpperCase();
+    
+    const indexItem = document.createElement('div');
+    indexItem.className = 'index-item';
+    const pageNumForThisPage = pageNum;
+    indexItem.onclick = () => goTo(pageNumForThisPage);
+    indexItem.innerHTML = `<span class="idx-alpha">${firstLetter}</span><span class="idx-name">${contrib.name}</span><span class="idx-dots"></span><span class="idx-pg">${pageNum}</span>`;
+    indexContent.appendChild(indexItem);
+  });
+  
+  // Her kişi için bir sayfa oluştur
+  sortedContribs.forEach((contrib, idx) => {
+    const pageNum = 3 + idx;
+    
+    let photo1HTML = `<svg class="mem-photo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="8" width="34" height="24" rx="2.5" stroke="#4a3f30" stroke-width="1.4"/><circle cx="20" cy="20" r="6.5" stroke="#4a3f30" stroke-width="1.4"/><path d="M14 8l2-3h8l2 3" stroke="#4a3f30" stroke-width="1.4"/><circle cx="31" cy="13" r="1.5" fill="#4a3f30" opacity="0.4"/></svg><span class="mem-photo-label">Fotoğraf buraya eklenecek</span>`;
+    
+    const memPage = document.createElement('div');
+    memPage.className = 'page';
+    memPage.id = `mem-${idx}`;
+    
+    let blocksHTML = `<div class="mem-block"><div class="mem-photo"><div class="mem-photo-inner">${photo1HTML}</div></div><p class="mem-text">${contrib.text}</p><div class="mem-meta"><span class="mem-author">${contrib.name}</span></div></div>`;
+    
+    memPage.innerHTML = `<div class="mem-page"><div class="mem-body">${blocksHTML}</div><div class="mem-footer"><span class="mem-ftr-title">Geleceği Yakala</span><span class="mem-ftr-num">${pageNum}</span></div></div>`;
+    bookWrap.appendChild(memPage);
+  });
+  
+  pages = document.querySelectorAll('.page');
+  total = pages.length;
+  updateCounter();
+}
+
+function goTo(pageNum) {
+  if (pageNum < 0 || pageNum >= total) return;
+  
+  pages.forEach((p, i) => {
+    p.classList.toggle('active', i === pageNum);
+  });
+  
+  cur = pageNum;
+  updateCounter();
+}
+
+function next() {
+  goTo(cur + 1);
+}
+
+function prev() {
+  goTo(cur - 1);
+}
+
+function updateCounter() {
+  const counter = document.getElementById('counter');
+  counter.textContent = `${cur + 1} / ${total}`;
+}
+
+// Sayfa tuşları
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') next();
+  if (e.key === 'ArrowLeft') prev();
+  if (e.key === 'PageDown') next();
+  if (e.key === 'PageUp') prev();
+});
+
+// İlk yükleme
+window.addEventListener('DOMContentLoaded', () => {
+  // Kapak fotoğrafını ekle
+  const p0 = document.getElementById('p0');
+  p0.style.backgroundImage = `url('${kapakPhoto}')`;
+  p0.style.backgroundSize = 'cover';
+  p0.style.backgroundPosition = 'center';
+  generatePages();
+  goTo(0);
+});

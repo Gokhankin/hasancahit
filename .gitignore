@@ -1,0 +1,24 @@
+# Gecici uretim dosyalari (sadece en guncel ve v5 haric digerlerini yok sayalim)
+gelecegi-yakala-son.html
+gelecegi-yakala-v6.html
+gelecegi-yakala-v7.html
+gelecegi-yakala-v8.html
+gelecegi-yakala-v9.html
+gelecegi-yakala-v10.html
+gelecegi-yakala-v11.html
+gelecegi-yakala-v12.html
+gelecegi-yakala-v13.html
+gelecegi-yakala-v14.html
+gelecegi-yakala-v15.html
+gelecegi-yakala-v16.html
+gelecegi-yakala-v17.html
+gelecegi-yakala-v18.html
+gelecegi-yakala-v19.html
+gelecegi-yakala-v20.html
+gelecegi-yakala-v21.html
+gelecegi-yakala-v22.html
+gelecegi-yakala-v23.html
+
+# Pycache or local items
+__pycache__/
+*.pyc
