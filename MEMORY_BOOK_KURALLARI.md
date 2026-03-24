@@ -35,6 +35,8 @@ Zamanla iterasyonlardan geçerek oturan kesin UI/UX kuralları bunlardır ve yen
 * **Mehmet Özdilek Özel Kuralı:**
   - Mehmet Özdilek'in eklendiği sayfada, videonun genişliği `75% / max-width: 320px` olarak özel ayarlanmıştır.
   - Ayrıca metni (`Doğum Günün Kutlu Olsun.`) ve isminin sağa değil, **istisnai olarak tam videonun altında ortalanmış** (Center) olması istenmiştir. Dolayısıyla o kişiye özel inline `text-align: center` ve `justify-content: center; max-width: 320px; margin: 0 auto;` uygulanır.
+  - **Canlı Altyazı Sistemi:** Özdilek videosu için `timeupdate` event listener'ı kullanılarak saniye bazlı bir canlı altyazı (subtitle) sistemi eklenmiştir. Altyazılar videonun hemen altındaki bir div içerisinde dinamik olarak render edilir.
+
 
 ## 4. İleriye Yönelik Tehlike ve Uyarılar (Hatalar)
 - **JSON içi Backslash (\) Problemi:** JS içindeki `text: "..."` literal stringlerinde eğer çift slash konursa (örn. `\\"İyi ki\\"`), stringin içinde tek bir ters eğik çizgi ekrana basılır. Bu işaretleri (`\`) kaldırmak için tüm dosyadaki `\\"` karakterlerini safça  `"` ile **değiştirmeyin!** Eğer öyle yapılırsa JS'in içerisindeki string erken kapanıp "SyntaxError: Unexpected identifier" fırlatır ve sitenin tuşlarını kilitler. Değiştirme işlemi `\\\"` → `\"` olarak yapılarak **\"** şeklindeki sağlam JS kaçış (escape) dizisi korunmalıdır.
