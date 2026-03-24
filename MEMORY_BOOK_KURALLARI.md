@@ -19,23 +19,24 @@ Zamanla iterasyonlardan geçerek oturan kesin UI/UX kuralları bunlardır ve yen
   - İleri-geri okları ve menü tuşları akıllı telefonda basılabilmesi için özellikle büyütüldü:
     `.nav-btn { font-size: 0.8rem !important; padding: 10px 16px !important; }`
     `.nav-arrow { font-size: 1.25rem !important; padding: 8px 18px !important; }`
+  - **Mobil Yükseklik Sorunu:** Geleneksel `100vh`, mobil tarayıcılarda adres çubuğu yüzünden içeriklerin kaymasına veya aşağı sarkmasına sebep olduğundan, her zaman güncel **`100dvh`** (dynamic viewport height) kullanılmalıdır.
+  - **Müzik Uyumluluğu:** Mobil cihazlarda harici MP3 dosyalarının çalışmama riskine karşı, müzik dosyaları sayfaya **Base64** formatında gömülmelidir.
 
 * **Medyalı Sayfalar (Fotoğraf/Video İçeren):**
-  - Orijinal görüntü en-boy (aspect ratio) oranlarından kaynaklı oluşan ekrandan taşma ve ekranı dikey işgal edip yazıyı itme hatalarını çözmek için fotoğraflar kısıtlanmıştır:
+  - Orijinal görüntü en-boy (aspect ratio) oranlarından kaynaklı oluşan ekrandan taşma hatalarını çözmek için kısıtlanmıştır:
     `<img style="max-height: 45vh; max-width: 100%; width: auto; height: auto; object-fit: contain;">`
     
 * **Medyasız Sayfalar (Sadece Yazı Olanlar):**
-  - "Medya Yok" SVG yer tutucu (`fallbackPhotoHTML`) tamamen yok edilerek sayfadan kaldırılır.
-  - Sadece metinden ibaret olan anılarda, **kitabi bir tasarım (Book-like typography)** kullanılır: 
-    İlk satır girintili (`text-indent: 2rem`), iki yana yaslı (`text-align: justify`), ferah satır aralığı (`line-height: 1.8`) ve gövdeye tam dikey olarak ortalı (`align-items: center` ana div flexi sayesinde).
+  - "Medya Yok" SVG yer tutucu tamamen kaldırılarak **kitabi bir tasarım (Book-like typography)** kullanılır: 
+    İlk satır girintili (`text-indent: 2rem`), iki yana yaslı (`text-align: justify`), ferah satır aralığı (`line-height: 1.8`).
 
 * **İsim Blokları (Author Names):**
-  - Bütün sayfalarda ana yazılar konteynerına yayılırken (veyahut ortalanırken), yazar ismi (`.mem-author`) sayfanın genel sağına değil, **tam olarak bir üstündeki yazının sağ bitiş sınırına bloğa hizalı** duracak şekilde tasarlanmıştır. Bu etki `.mem-meta { justify-content: flex-end }` kullanılarak elde edilir.
+  - Yazar isminin sayfanın genel sağına değil, **tam olarak yazının sağ bitiş sınırına** hizalı durması sağlanır.
 
 * **Mehmet Özdilek Özel Kuralı:**
-  - Mehmet Özdilek'in eklendiği sayfada, videonun genişliği `75% / max-width: 320px` olarak özel ayarlanmıştır.
-  - Ayrıca metni (`Doğum Günün Kutlu Olsun.`) ve isminin sağa değil, **istisnai olarak tam videonun altında ortalanmış** (Center) olması istenmiştir. Dolayısıyla o kişiye özel inline `text-align: center` ve `justify-content: center; max-width: 320px; margin: 0 auto;` uygulanır.
-  - **Canlı Altyazı Sistemi:** Özdilek videosu için `timeupdate` event listener'ı kullanılarak saniye bazlı bir canlı altyazı (subtitle) sistemi eklenmiştir. Altyazılar videonun hemen altındaki bir div içerisinde dinamik olarak render edilir.
+  - Videonun genişliği `75% / max-width: 320px` olarak özel ayarlanmıştır.
+  - Metni ve ismi istisnai olarak videonun altında **ortalanmış (Center)** halde durur.
+  - **Canlı Altyazı Sistemi:** `timeupdate` event listener'ı kullanılarak altyazılar videonun hemen altındaki sabit yükseklikli (72px) bir div içerisinde render edilir. Bu sabit yükseklik, altyazılar 1 satırdan 2 satıra geçtiğinde video alanının "tıkanmasını" veya aşağı-yukarı oynamasını engeller.
 
 
 ## 4. İleriye Yönelik Tehlike ve Uyarılar (Hatalar)
