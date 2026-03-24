@@ -301,6 +301,7 @@ html, body {
   <button class="nav-btn" onclick="goTo(2)">Önsöz</button>
   <button class="nav-btn" onclick="goTo(3)">İçindekiler</button>
   <div class="nav-sep"></div>
+  <button class="nav-arrow" id="musicBtn" onclick="toggleMusic()" style="font-size:1rem; padding: 2px 8px; margin-right: 6px;">🎵</button>
   <span class="nav-title">Geleceği Yakala</span>
   <div class="nav-sep"></div>
   <div class="nav-arrows">
@@ -408,7 +409,7 @@ const contributors = [
   { name: "Emine Aslı Konuk", text: "Benim Canım, güzel yeğenim.. Hasan Cahit'im,<br><br>Çok karlı bir 8 Şubat Saklıkent sabahında doğmuştun. Ben de dağdan uçarak inmiştim adeta. Yüreğimize ve ailemize güneş gibi doğmuştun. Sen benim yüreğimin ikinci evladısın. Ömrümce seni çok sevecek ve değer vereceğim.", date: "" },
   { name: "Hande Naipoğlu", text: "Canımın içi iyi ki doğdun iyi ki benim kuzenim oldun. Biz ablanla iki kardeştik üç olduk tam olduk H&H&H 🥰 Hayat sana ömrün boyunca hep güzellikler sunsun hep mutlu ol şanslı bir ablayım senin gibi iyi kalpli bir kardeşe sahibim seninle gurur duyuyorum. Yeni yaşın kutlu olsun. Seni hep sevecek ömrün boyunca hep yanında olacağım ablan olarak. Seni çok öpüyorum ve seni çoook seviyorum.<br><br>Ablan Hande 😘🥰❤️🥳🧿", date: "" },
   { name: "Gökhan Naipoğlu", text: "Yakışıklı kardeşim, doğum günün kutlu olsun 🎂👏🏻🙂 Çok güzel bir yaş diliyorum her şey gönlünce olsun 🧿<br><br>Sevgilerimle,<br>Gökhan abin", date: "" },
-  { name: "Akant Türel", text: "İyi ki doğdun. Seninle her şey daha eğlenceli ve güzel. Hep böyle kal, enerjin hiç bitmesin. Nice mutlu yıllara.<br><br>Akant Türel", date: "" },
+  { name: "Akant Türel", text: "İyi ki doğdun. Seninle her şey daha eğlenceli ve güzel. Hep böyle kal, enerjin hiç bitmesin. Nice mutlu yıllara.", date: "" },
   { name: "Nadire Konuk", text: "Hasan Cahit'im,<br><br>Hayatıma güneş gibi doğdun ve benim evladım olmanın büyük mutluluğunu ve gururunu yaşıyorum. Sağlıkla başarılara koşacağın bir yaşamın olacağına inancım tam.<br><br>Bu doğum gününde de seni tüm kalbimle kucaklıyor ve tebrik ediyorum.", date: "" },
   { name: "Sümeyya Yıldız", text: "Canım Hasan Cahit,<br><br>Seni daha bebekliğinden beri tanıyorum. Büyümeni, adım adım kendi yolunu bulmanı izlemek benim için çok özel bir mutluluktu. Yıllar nasıl geçti anlamadım; bugün 23 yaşına gelmiş, pırıl pırıl bir genç oldun.<br><br>Hayatın boyunca kalbin hep güzel kalsın, yüzün hep gülsün. Yolun açık, şansın bol olsun. Seni tanımak ve büyümene tanıklık etmek benim için büyük bir gurur.<br><br>İyi ki doğdun.<br>Sevgiyle…", date: "" },
 
@@ -618,5 +619,28 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+
+<!-- Background Music -->
+<audio id="bgMusic" src="arka_plan_muzigi.mp3" loop></audio>
+<script>
+let isMusicPlaying = false;
+function toggleMusic() {
+  const music = document.getElementById('bgMusic');
+  const btn = document.getElementById('musicBtn');
+  if (isMusicPlaying) {
+    music.pause();
+    btn.innerHTML = '🎵';  // Play icon
+    btn.style.opacity = "0.6";
+    isMusicPlaying = false;
+  } else {
+    music.play().then(() => {
+      btn.innerHTML = '🔇';  // Pause/Muted icon depending on taste, let's use a dynamic one
+      btn.style.opacity = "1";
+      isMusicPlaying = true;
+    }).catch(err => console.log("Otomatik çalma tarayıcı tarafından engellendi."));
+  }
+}
+</script>
 </body>
+
 </html>
